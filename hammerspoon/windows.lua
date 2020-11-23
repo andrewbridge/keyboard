@@ -189,6 +189,75 @@ function window.right60(win)
   win:setFrame(f)
 end
 
+-- +-----------------+
+-- +--------+        |
+-- |        |        |
+-- |  HERE  |        |
+-- +-----------------+
+function window.downLeft60(win)
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:fullFrame()
+
+  f.x = max.x
+  f.y = max.y + (max.h * 0.4)
+  f.w = max.w/2
+  f.h = max.h * 0.6
+  win:setFrame(f)
+end
+
+-- +-----------------+
+-- +--------+  < HERE|
+-- |                 |
+-- |                 |
+-- +-----------------+
+function window.upLeft40(win)
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:fullFrame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w/2
+  f.h = max.h * 0.4
+  win:setFrame(f)
+end
+
+-- +-----------------+
+-- |        +--------|
+-- |        |        |
+-- |        |  HERE  |
+-- +-----------------+
+function window.downRight60(win)
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:fullFrame()
+
+  f.x = max.x + (max.w / 2)
+  f.y = max.y + (max.h * 0.4)
+  f.w = max.w/2
+  f.h = max.h * 0.6
+
+  win:setFrame(f)
+end
+
+-- +-----------------+
+-- | HERE > +--------|
+-- |                 |
+-- |                 |
+-- +-----------------+
+function window.upRight40(win)
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:fullFrame()
+
+  f.x = max.x + (max.w / 2)
+  f.y = max.y
+  f.w = max.w/2
+  f.h = max.h * 0.4
+  win:setFrame(f)
+end
+
 function window.nextScreen(win)
   local currentScreen = win:screen()
   local allScreens = hs.screen.allScreens()
